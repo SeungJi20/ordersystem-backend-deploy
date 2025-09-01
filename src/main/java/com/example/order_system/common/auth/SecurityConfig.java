@@ -64,7 +64,7 @@ public class SecurityConfig { // 이게 필터체인
 
     private CorsConfigurationSource corsConfiguration(){
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "https://www.seung12.shop"));
         configuration.setAllowedMethods(Arrays.asList("*")); // 모든 HTTP(get, post 등) 메서드 허용
         configuration.setAllowedHeaders(Arrays.asList("*")); // 모든 헤더요소(Authorization 등) 허용
         configuration.setAllowCredentials(true); // 자격 증명 허용
