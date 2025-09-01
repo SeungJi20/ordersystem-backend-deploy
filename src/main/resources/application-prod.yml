@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  redis:
+    host: xxxx
+    port: 6379
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://xxxxxx:3307/ordersystem
+    username: xxxxx
+    password: yyyyy
+
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show_sql: true
+
+servlet:
+  multipart:
+    # spring의 디폴트 사이즈 10MB
+    max-file-size: 1000MB
+    max-request-size: 1000MB
+
+# aws s3 접근하기 위한 계정 세팅
+cloud:
+  aws:
+    credentials:
+      access-key: xx
+      secret-key: yy
+    region:
+      static: ap-northeast-2
+    s3:
+      bucket: seung-bucket11
+
+jwt:
+  expirationAt: 1000 # 1000분 accessToken
+  secretKeyAt: xxxx
+  expirationRt: 10000
+  secretKeyRt: yyyy
